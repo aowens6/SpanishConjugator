@@ -1,0 +1,335 @@
+Problem Statement
+
+  Develop a program that takes a Spanish verb and a tense  and then displays a message stating the chosen verb and tense. Use an array(s) to house the verbs with the conjugations, search the array and display the pronouns yo, tu, el/ella/usted, nosotros, vosotros, and ellos/ellas/ustedes along with their corresponding forms of the verb
+
+Nouns and Verbs
+
+  nouns: verb, tense, message, array, pronouns, conjugations 
+
+  verbs: takes, display, search, display
+
+Defining Diagram
+
+  Inputs
+    verb
+    tense
+    
+  Processing
+    take in verb and tense
+    process message of chosen verbs
+    search array for corresponding conjugations
+
+  Outputs
+    message
+    pronouns
+    conjugations
+  
+Pseudocode
+
+SpanishVerbConjugator
+  Initialize message to ""
+  Initialize selectedStatement to ""
+  Prompt user for verb
+  Prompt user for tense
+  
+  Populate verbsArray with "Estar", "Ir", "Ser"
+  and corresponding conjugations in the present, preterite, 
+  and imperfect tenses in hashes
+  
+  IF user selects "Estar" and "Present" THEN
+    selectedStatement += "The conjugations for Estar in the Present tense are:"
+    FOR
+      message += pronoun + presentEstarConjugation
+    ENDFOR
+  ELSEIF user selects "Estar" and "Preterite" THEN
+    selectedStatement += "The conjugations for Estar in the Preterite tense are:"
+    FOR
+      message += pronoun + preteriteEstarConjugation
+    ENDFOR
+  ELSEIF user selects "Estar" and "Imperfect" THEN
+    selectedStatement += "The conjugations for Estar in the Imperfect tense are:"
+    FOR 
+      message += pronoun + imperfectEstarConjugation
+    ENDFOR
+  ELSEIF user selects "Ir" and "Present" THEN
+    selectedStatement += "The conjugations for Ir in the Present tense are:"
+    FOR
+      message += pronoun + presentIrConjugation
+    ENDFOR
+  ELSEIF user selects "Ir" and "Preterite" THEN
+    selectedStatement += "The conjugations for Ir in the Preterite tense are:"
+    FOR
+      message += pronoun + preteriteIrConjugation
+    ENDFOR
+  ELSEIF user selects "Ir" and "Imperfect" THEN
+    selectedStatement += "The conjugations for Ir in the Imperfect tense are:"
+    FOR
+      message += pronoun + imperfectIrConjugation
+    ENDFOR
+  ELSEIF user selects "Ser" and "Present" THEN
+    selectedStatement += "The conjugations for Ser in the Present tense are:"
+    FOR
+      message += pronoun + presentSerConjugation
+    ENDFOR
+  ELSEIF user selects "Ser" and "Preterite" THEN
+    selectedStatement += "The conjugations for Ser in the Preterite tense are:"
+    FOR
+      message += pronoun + preteriteSerConjugation
+    ENDFOR
+  ELSEIF user selects "Ser" and "Imperfect" THEN
+    selectedStatement += "The conjugations for Ser in the Imperfect tense are:"
+    FOR
+      message += pronoun + imperfectSerConjugation
+    ENDFOR
+  ENDIF
+  display(message)
+END
+
+
+Test Plans
+
+Variables: verb, tense
+
+Test Case 1
+
+  Inputs: Estar, Present
+
+  Expected Output: 
+  
+  The conjugations for Estar in the Present tense are:
+  
+    yo: estoy
+    tu: estas
+    el/ella/usted: esta
+    nosotros: estamos
+    vosotros: estais
+    ellos/ellas/ustedes: estan
+
+  Actual Output:
+  
+  The conjugations for Estar in the Present tense are:
+  
+    yo: estoy
+    tú: estás
+    él, ella, usted: está
+    nosotros: estamos
+    vosotros: estáis
+    ellos, ellas, ustedes: están
+
+
+Test Case 2
+
+  Inputs: Estar, Preterite
+
+  Expected Output:
+  
+  The conjugations for Estar in the Preterite tense are:
+
+    yo: estuve
+    tu: estuviste
+    el/ella/usted: estuvo
+    nosotros: estuvimos
+    vosotros: estuvais
+    ellos/ellas/ustedes: estuvieron
+
+  Actual Output:
+  
+  The conjugations for Estar in the Preterite tense are:
+  
+    yo: estuve
+    tú: estuviste
+    él, ella, usted: estuvo
+    nosotros: estuvimos
+    vosotros: estuvais
+    ellos, ellas, ustedes: estuvieron
+
+Test Case 3
+
+  Inputs: Estar, Imperfect
+
+  Expected Output:
+
+    The conjugations for Estar in the Imperfect tense are:
+
+    yo: estaba
+    tu: estabas
+    el/ella/usted: estaba
+    nosotros: estabamos
+    vosotros: estabais
+    ellos/ellas/ustedes: estaban
+
+  Actual Output:
+
+    The conjugations for Estar in the Imperfect tense are:
+
+    yo: estaba
+    tú: estabas
+    él, ella, usted: estaba
+    nosotros: estábamos
+    vosotros: estabais
+    ellos, ellas, ustedes: estaban
+
+Test Case 4
+
+  Inputs: Ir, Present
+
+  Expected Output:
+
+    The conjugations for Ir in the Present tense are:
+
+    yo: voy
+    tu: vas
+    el/ella/usted: va
+    nosotros: vamos
+    vosotros: vais
+    ellos/ellas/ustedes: van
+
+  Actual Output:
+
+    The conjugations for Ir in the Present tense are:
+
+    yo: voy
+    tú: vas
+    él, ella, usted: va
+    nosotros: vamos
+    vosotros: vais
+    ellos, ellas, ustedes: van
+
+Test Case 5
+
+  Inputs: Ir, Preterite
+
+  Expected Output:
+
+    The conjugations for Ir in the Preterite tense are:
+
+    yo: fui
+    tu: fuiste
+    el/ella/usted: fue
+    nosotros: fuimos
+    vosotros: fuisteis
+    ellos/ellas/ustedes: fueron
+
+  Actual Output:
+
+    The conjugations for Ir in the Preterite tense are:
+
+    yo: fui
+    tú: fuiste
+    él, ella, usted: fue
+    nosotros: fuimos
+    vosotros: fuisteis
+    ellos, ellas, ustedes: fueron
+
+Test Case 6
+
+  Inputs: Ir, Imperfect
+
+  Expected Output:
+
+    The conjugations for Ir in the Imperfect tense are:
+
+    yo: iba
+    tu: ibas
+    el/ella/usted: iba
+    nosotros: ibamos
+    vosotros: ibais
+    ellos/ellas/ustedes: iban
+
+  Actual Output:
+
+    The conjugations for Ir in the Imperfect tense are:
+
+    yo: iba
+    tú: ibas
+    él, ella, usted: iba
+    nosotros: íbamos
+    vosotros: ibais
+    ellos, ellas, ustedes: iban
+
+Test Case 7
+
+  Inputs: Ser, Present
+
+  Expected Output:
+
+    The conjugations for Ser in the Present tense are:
+
+    yo: soy
+    tu: eres
+    el/ella/usted: es
+    nosotros: somos
+    vosotros: sois
+    ellos/ellas/ustedes: son
+
+  Actual Output:
+
+    The conjugations for Ser in the Present tense are:
+
+    yo: soy
+    tú: eres
+    él, ella, usted: es
+    nosotros: somos
+    vosotros: sois
+    ellos, ellas, ustedes: son
+
+Test Case 8
+
+  Inputs: Ser, Preterite
+
+  Expected Output:
+
+    The conjugations for Ser in the Preterite tense are:
+
+    yo: fui
+    tu: fuiste
+    el/ella/usted: fue
+    nosotros: fuimos
+    vosotros: fuisteis
+    ellos/ellas/ustedes: fueron
+
+  Actual Output:
+
+    The conjugations for Ser in the Preterite tense are:
+
+    yo: fui
+    tú: fuiste
+    él, ella, usted: fue
+    nosotros: fuimos
+    vosotros: fuisteis
+    ellos, ellas, ustedes: fueron
+
+Test Case 9
+
+  Inputs: Ser, Imperfect
+
+  Expected Output:
+
+    The conjugations for Ser in the Imperfect tense are:
+
+    yo: era
+    tu: eras
+    el/ella/usted: era
+    nosotros: eramos
+    vosotros: erais
+    ellos/ellas/ustedes: eran
+
+  Actual Output:
+
+    The conjugations for Ser in the Imperfect tense are:
+
+    yo: era
+    tú: eras
+    él, ella, usted: era
+    nosotros: éramos
+    vosotros: erais
+    ellos, ellas, ustedes: eran
+
+
+
+
+
+
+
+
+

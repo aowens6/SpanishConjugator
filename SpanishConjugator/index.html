@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Spanish Verb Conjugator</title>
+    <meta name="description" content="Spanish verb conjugator conjugations present future preterite imperfect tense">
+    <meta name="author" content="Austyn Owens">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+    </script>
+    <![endif]-->
+    <style>
+    
+    </style>
+  </head>
+  <body>
+    <section id="wrapper">
+    <header>
+      <h1>Spanish Verb Conjugator</h1>
+    </header>
+      <div id="content">
+        <form id="selectVerbAndTense" action="#">
+          <select id="verbList">
+            <option disabled value="selectVerb">Select a verb</option>
+            <option value="0">Estar</option>
+            <option value="1">Ir</option>
+            <option value="2">Ser</option>
+          </select> 
+          <select id="tenseList">
+            <option disabled value="selectTense">Select a tense</option>
+            <option value="Present">Present</option>
+            <option value="Preterite">Preterite</option>
+            <option value="Imperfect">Imperfect</option>
+          </select>
+          <input type="submit" value="Conjugate">
+        </form>
+        <div id="selectionStatementOutput"></div>
+
+        <div id="outputConjugations"></div>
+        
+      </div>
+    </section>
+    <div><footer>&copy; 2015 Austyn Owens</footer></div>
+    <script src="js/SpanishVerbConjugator.js"></script>
+  </body>
+</html>
