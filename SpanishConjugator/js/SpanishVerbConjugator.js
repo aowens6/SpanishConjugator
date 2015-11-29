@@ -8,6 +8,155 @@ A program that takes the Spanish verb and tense input from the user and finds th
 corresponding list of conjugations
 
 */
+$(function(){
+    $verbList = $('#verbList');
+    $tenseList = $('#tenseList');
+    verbs = [
+  {
+    name: "Estar",
+      tenses: {
+        Present: {
+          yo: "estoy",
+          tú: "estás",
+          'él, ella, usted': "está",
+          nosotros: "estamos",
+          vosotros: "estáis",
+          'ellos, ellas, ustedes': "están"
+        },
+        Preterite: {
+          yo: "estuve",
+          tú: "estuviste",
+          'él, ella, usted': "estuvo",
+          nosotros: "estuvimos",
+          vosotros: 'estuvais',
+          'ellos, ellas, ustedes': "estuvieron"
+        },
+        Imperfect: {
+          yo: "estaba",
+          tú: "estabas",
+          'él, ella, usted': "estaba",
+          nosotros: 'estábamos',
+          vosotros: 'estabais',
+          'ellos, ellas, ustedes': "estaban"
+        }
+      }
+    },
+  {
+    name: "Ir",
+      tenses: {
+        Present: {
+          yo: 'voy',
+          tú: 'vas',
+          'él, ella, usted': 'va',
+          nosotros: 'vamos',
+          vosotros: 'vais',
+          'ellos, ellas, ustedes': 'van'
+        },
+        Preterite: {
+          yo: 'fui',
+          tú: 'fuiste',
+          'él, ella, usted': 'fue',
+          nosotros: 'fuimos',
+          vosotros: 'fuisteis',
+          'ellos, ellas, ustedes': 'fueron'
+        },
+        Imperfect: {
+          yo: 'iba',
+          tú: 'ibas',
+          'él, ella, usted': 'iba',
+          nosotros: 'íbamos',
+          vosotros: 'ibais',
+          'ellos, ellas, ustedes': 'iban'
+        }
+      }
+    },
+  {
+    name: "Ser",
+      tenses: {
+        Present: {
+          yo: 'soy',
+          tú: 'eres',
+          'él, ella, usted': 'es',
+          nosotros: 'somos',
+          vosotros: 'sois',
+          'ellos, ellas, ustedes': 'son'
+        },
+        Preterite: {
+          yo: 'fui',
+          tú: 'fuiste',
+          'él, ella, usted': 'fue',
+          nosotros: 'fuimos',
+          vosotros: 'fuisteis',
+          'ellos, ellas, ustedes': 'fueron'
+        },
+        Imperfect: {
+          yo: 'era',
+          tú: 'eras',
+          'él, ella, usted': 'era',
+          nosotros: 'éramos',
+          vosotros: 'erais',
+          'ellos, ellas, ustedes': 'eran'
+        }
+      }
+    },
+    
+    {
+        name: "Haber",
+      tenses: {
+        Present: {
+          yo: "he",
+          tú: "has",
+          'él, ella, usted': "ha, hay",
+          nosotros: "hemos",
+          vosotros: "habéis",
+          'ellos, ellas, ustedes': "han"
+        },
+        Preterite: {
+          yo: "--",
+          tú: "--",
+          'él, ella, usted': "hubo",
+          nosotros: "--",
+          vosotros: '--',
+          'ellos, ellas, ustedes': "--"
+        },
+        Imperfect: {
+          yo: "había",
+          tú: "habías",
+          'él, ella, usted': "había",
+          nosotros: 'habíamos',
+          vosotros: 'habíais',
+          'ellos, ellas, ustedes': "habían"
+        }
+      }
+    }
+  ];
+   
+    
+    $('#selectVerbAndTense').submit(function() {
+        var selectionStatement = "";
+        var message = "";
+       indexOfVerb = $verbList.find('option:selected').attr('value');
+        nameOfVerb = $verbList.find('option:selected').text();
+        tense =  $tenseList.find('option:selected').attr('value');
+        
+        selectionStatement += "The conjugations for " + nameOfVerb + " in the " + tense + " tense are: ";
+        
+        
+        pronouns = (Object.keys(verbs[indexOfVerb]["tenses"][tense]));
+        
+        for(var index = 0; index < pronouns.length; index++) {
+          var pronoun = pronouns[index];
+          message += '<p>' + pronouns[index]  + ": " + "<span class='conjugation'>" + 
+          verbs[indexOfVerb]["tenses"][tense][pronoun] + '</span></p>';
+        }
+        
+        $('#outputConjugations').html(message);
+        
+    });
+});
+
+
+/*
 function SpanishVerbConjugator(){
 
   // Declare variables
@@ -107,6 +256,36 @@ function SpanishVerbConjugator(){
           'ellos, ellas, ustedes': 'eran'
         }
       }
+    },
+    
+    {
+        name: "Haber",
+      tenses: {
+        Present: {
+          yo: "he",
+          tú: "has",
+          'él, ella, usted': "ha, hay",
+          nosotros: "hemos",
+          vosotros: "habéis",
+          'ellos, ellas, ustedes': "han"
+        },
+        Preterite: {
+          yo: "--",
+          tú: "--",
+          'él, ella, usted': "hubo",
+          nosotros: "--",
+          vosotros: '--',
+          'ellos, ellas, ustedes': "--"
+        },
+        Imperfect: {
+          yo: "había",
+          tú: "habías",
+          'él, ella, usted': "había",
+          nosotros: 'habíamos',
+          vosotros: 'habíais',
+          'ellos, ellas, ustedes': "habían"
+        }
+      }
     }
   ];
 
@@ -146,4 +325,4 @@ function SpanishVerbConjugator(){
   });  
 }
 
-SpanishVerbConjugator();
+SpanishVerbConjugator();*/
